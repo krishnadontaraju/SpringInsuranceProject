@@ -45,7 +45,7 @@ public class InsuranceCategoryService implements IInsuranceCategoryService{
 			throw new CategoryException(600 , "Insurance already found");
 		}
 		else {
-			log.info("No pre-existing Contact found initiating add method");
+			log.info("No pre-existing Insurance scheme found initiating add method");
 			InsuranceCategoryEntity insuranceCategory = mapper.map(categoryDTO , InsuranceCategoryEntity.class);
 			categoryRepository.save(insuranceCategory);
 
