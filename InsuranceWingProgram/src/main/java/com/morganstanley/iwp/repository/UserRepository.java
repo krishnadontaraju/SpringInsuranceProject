@@ -8,7 +8,7 @@ import com.morganstanley.iwp.entity.InsuranceUserEntity;
 
 public interface UserRepository extends JpaRepository<InsuranceUserEntity, Long>{
 
-	Optional<InsuranceUserEntity> findByMobileNumber(long mobileNumber);
+	Optional<InsuranceUserEntity> findByMobileNumber(String mobileNumber);
 
 
 }

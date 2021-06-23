@@ -30,7 +30,7 @@ public @Data @ToString class InsuranceUserEntity {
 	@Column(name = "user_serial_number")
 	public long Id;
 	private String completeName;
-	private long mobileNumber;
+	private String mobileNumber;
 	private int age;
 	private String occupation;
 	private String familyBackground;
@@ -39,6 +39,8 @@ public @Data @ToString class InsuranceUserEntity {
 	private LocalDateTime registrationTime;
 	private LocalDateTime lastUpdationTime;
 	private String kyc;
+	private String password;
+	private String roles;
 	
 	
 	@Column(name = "identity_doc_type" , table = "documents")

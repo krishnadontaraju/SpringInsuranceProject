@@ -37,8 +37,8 @@ public class CategoryController {
 	private TokenUtility tokenManager;
 	
 	//Controls the Registration of The Insurance scheme
-	@PostMapping("/addCategory")
-	public ResponseEntity<ResponseDTO> addContactsToTheBook(@Valid @RequestBody InsuranceCategoryDTO categoryDTO , @RequestPart MultipartFile healthDOc){
+	@PostMapping("/addCategory/pro")
+	public ResponseEntity<ResponseDTO> addInsuranceSchemes(@Valid @RequestBody InsuranceCategoryDTO categoryDTO , @RequestPart MultipartFile healthDOc){
 		
 		InsuranceCategoryEntity category = categoryService.addCategory(categoryDTO);
 		
@@ -50,8 +50,8 @@ public class CategoryController {
 	
 	//Controls the Updation of The Insurance scheme
 
-	@PutMapping("/updates/{token}")
-	public ResponseEntity<ResponseDTO> updateContactsOfTheBook(@PathVariable("token") String token , @Valid @RequestBody InsuranceCategoryDTO categoryDTO){
+	@PutMapping("/updates/{token}/pro")
+	public ResponseEntity<ResponseDTO> updateInsuranceScheme(@PathVariable("token") String token , @Valid @RequestBody InsuranceCategoryDTO categoryDTO){
 		InsuranceCategoryEntity category = categoryService.updateCategory(token , categoryDTO);
 		
 		ResponseDTO response = new ResponseDTO("Updated the Insurance Successfully" , category);
@@ -62,8 +62,8 @@ public class CategoryController {
 	//Controls the viewing possibility of The Insurance scheme
 
 	
-	@GetMapping(value = {"" , "/" , "/see"})
-	public ResponseEntity<ResponseDTO> viewAllContacts(){
+	@GetMapping(value = {"/seeSchemes/pro"})
+	public ResponseEntity<ResponseDTO> viewAllSchemes(){
 		
 		List<InsuranceCategoryEntity> categories = categoryService.viewAllCategories();
 		
@@ -74,8 +74,8 @@ public class CategoryController {
 
 	//Controls the Deleting of The Insurance scheme
 
-    @DeleteMapping("/delete")
-	ResponseEntity<ResponseDTO> deleteContacts(@RequestParam String token){
+    @DeleteMapping("/delete/pro")
+	ResponseEntity<ResponseDTO> deleteScheme(@RequestParam String token){
 
 		ResponseDTO responseDTO = categoryService.deleteInsuranceCategory(token);
 

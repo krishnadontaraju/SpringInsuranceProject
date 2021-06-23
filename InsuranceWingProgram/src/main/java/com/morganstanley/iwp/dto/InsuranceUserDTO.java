@@ -12,7 +12,7 @@ public @ToString @Data class InsuranceUserDTO {
 	@NotNull(message = "Name of the Insurance User cannot be null")
 	public String completeName;
 	@NotNull(message = "Mobile Number of the Insurance User cannot be null")
-	public long mobileNumber;
+	public String mobileNumber;
 	@NotNull(message = "Age of the Insurance User cannot be null")
 	public int age;
 	@NotNull(message = "Occupation of the Insurance User cannot be null")
@@ -39,5 +39,7 @@ public @ToString @Data class InsuranceUserDTO {
 	public File healthDocument;
 	@NotNull(message = "Income Document of the Insurance User cannot be null")
 	public File incomeDocument;
+	@NotNull(message = "Password cannot be null")
+	public String password;
 
 }

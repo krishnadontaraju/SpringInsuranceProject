@@ -28,7 +28,7 @@ public class PurchaseController {
 	
 	// Controls the Purchase of Insurance by User
 	
-	@PostMapping("/add")
+	@PostMapping("/add/adj")
 	public ResponseEntity<ResponseDTO> addInsuranceToUser(@Valid @RequestBody InsurancePurchaseDTO creationDTO){
 		
 		ResponseDTO response = purchaseService.addInsuranceToUser(creationDTO);
@@ -38,7 +38,7 @@ public class PurchaseController {
 	
 	// Controls the Update of Insurance by User
 
-	@PutMapping("/update/{token}")
+	@PutMapping("/update/{token}/adj")
 	public ResponseEntity<ResponseDTO> updateInsuranceOfuser(@PathVariable String token , @Valid @RequestBody InsurancePurchaseDTO creationDTO){
 		ResponseDTO response = purchaseService.updateInsuranceOftheUser(token , creationDTO);
 		
@@ -47,7 +47,7 @@ public class PurchaseController {
 
 	// Controls the view all Insurances
 
-	@GetMapping("/view/all")
+	@GetMapping("/view/all/adj")
 	public ResponseEntity<ResponseDTO> viewAllUserInsurances(){
 		ResponseDTO response = purchaseService.viewAllInsurances();
 		
@@ -56,7 +56,7 @@ public class PurchaseController {
 
 	// Controls the view of Insurances with status
 
-	@GetMapping("/view/status/{status}")
+	@GetMapping("/view/status/{status}/adj")
 	public ResponseEntity<ResponseDTO> viewAllUsersByStatus(@PathVariable String status){
 		ResponseDTO response = purchaseService.viewInsurancesByStatus(status);
 		
@@ -65,7 +65,7 @@ public class PurchaseController {
 
 	// Controls the view of Insurances with User id
 
-	@GetMapping("/view/user/{id}")
+	@GetMapping("/view/user/{id}/adj")
 	public ResponseEntity<ResponseDTO> viewAllInsurancesByUser(@PathVariable long id){
 		
 		ResponseDTO response = purchaseService.viewInsuranceByUser(id);
@@ -75,7 +75,7 @@ public class PurchaseController {
 
 	// Controls the view of Insurances within period by User
 
-	@GetMapping("/view/period/{peroid}")
+	@GetMapping("/view/period/{peroid}/adj")
 	public ResponseEntity<ResponseDTO> viewAllInsuranceByPeriod(@PathVariable int peroid){
 		
 		ResponseDTO response = purchaseService.viewInsurancesByPeriod(peroid);
@@ -85,7 +85,7 @@ public class PurchaseController {
 
 	// Controls the Deletion of Insurance by User
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/delete/{id}/adj")
 	public ResponseEntity<ResponseDTO> deleteInsurance(@PathVariable long id){
 		ResponseDTO response = purchaseService.deleteInsurance(id);
 		
@@ -94,7 +94,7 @@ public class PurchaseController {
 
 	// Controls the Claim of Insurance by User
 
-	@PutMapping("/claim/{purchaseId}")
+	@PutMapping("/claim/{purchaseId}/in")
 	public ResponseEntity<ResponseDTO> claimInsuranceOfTheUser(@PathVariable long purchaseId){
 		
 		ResponseDTO response = purchaseService.updateClaimStatus(purchaseId);

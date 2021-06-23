@@ -32,7 +32,7 @@ public class UserController {
 	private TokenUtility token;
 	
 	//Controls the Registration of User
-	@PostMapping(value = "/addUser")
+	@PostMapping(value = "/addUser/adj")
 	public ResponseEntity<ResponseDTO> addUser(@RequestBody InsuranceUserDTO userDTO ) throws IOException{
 		
 		InsuranceUserEntity user = userService.addUser(userDTO);
@@ -45,7 +45,7 @@ public class UserController {
 	
 	//Controls the Retrieval of All Users
 	
-	@GetMapping("/users")
+	@GetMapping("/users/adj")
 	public ResponseEntity<ResponseDTO> getUsers(){
 		
 		List<InsuranceUserEntity> users = userService.getAllUsers();
@@ -58,7 +58,7 @@ public class UserController {
 	
 	//Controls the Updation of User
 	
-	@PutMapping("/update/{token}")
+	@PutMapping("/update/{token}/adj")
 	public ResponseEntity<ResponseDTO> updateUser (@PathVariable String token , @RequestBody InsuranceUserDTO userDTO){
 		
 		InsuranceUserEntity user = userService.updateUser(token , userDTO);
@@ -71,7 +71,7 @@ public class UserController {
 	
 	//Controls the Deltion of User
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/adj")
 	public ResponseEntity<ResponseDTO> deleteUser(@RequestParam String token){
 		
 		ResponseDTO response = userService.deleteUser(token);
